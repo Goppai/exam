@@ -1,0 +1,257 @@
+{
+  "paper_title": "数学试卷",
+  "subject": "数学",
+  "questions": [
+    {
+      "id": "19",
+      "type": "填空题",
+      "stem": "吴叔叔买了一套面积为120平方米的房子，其中，客厅面积占了总面积的\\frac{1}{4}，厨房面积占了总面积的\\frac{1}{8}。客厅面积有____平方米，厨房面积有____平方米。",
+      "options": {},
+      "student_answer": {
+        "final": "30 平方米，15 平方米",
+        "steps": []
+      },
+      "student_marks": {
+        "checked_options": [],
+        "crossed": false,
+        "other_marks": ""
+      },
+      "teacher_feedback": {
+        "is_correct": true,
+        "score": "2分",
+        "symbols": [
+          "√"
+        ],
+        "comment": ""
+      },
+      "sub_questions": []
+    },
+    {
+      "id": "20",
+      "type": "计算题",
+      "stem": "怎样简便就怎样算。",
+      "options": {},
+      "student_answer": {
+        "final": "",
+        "steps": [
+          {
+            "expression": "\\frac{17}{15} \\times 45",
+            "result": "51",
+            "steps": [
+              "= \\frac{17}{15} \\times (15 \\times 3)",
+              "= 17 \\times 3",
+              "= 51"
+            ]
+          },
+          {
+            "expression": "\\frac{6}{55} \\times \\frac{11}{5}",
+            "result": "\\frac{6}{25}",
+            "steps": [
+              "= \\frac{6}{5 \\times 11} \\times \\frac{11}{5}",
+              "= \\frac{6}{25}"
+            ]
+          },
+          {
+            "expression": "45 \\times \\frac{2}{3}",
+            "result": "30",
+            "steps": [
+              "= 15 \\times 3 \\times \\frac{2}{3}",
+              "= 15 \\times 2",
+              "= 30"
+            ]
+          },
+          {
+            "expression": "\\frac{3}{7} + \\frac{7}{3}",
+            "result": "\\frac{58}{21}",
+            "steps": [
+              "= \\frac{3 \\times 3}{7 \\times 3} + \\frac{7 \\times 7}{3 \\times 7}",
+              "= \\frac{9}{21} + \\frac{49}{21}",
+              "= \\frac{58}{21}"
+            ]
+          },
+          {
+            "expression": "\\frac{55}{36} \\times \\frac{6}{11}",
+            "result": "\\frac{5}{6}",
+            "steps": [
+              "= \\frac{55 \\times 6}{36 \\times 11}",
+              "= \\frac{5}{6}"
+            ]
+          },
+          {
+            "expression": "\\frac{13}{7} \\times 91",
+            "result": "169",
+            "steps": [
+              "= 13 \\times 13",
+              "= 169"
+            ]
+          },
+          {
+            "expression": "\\frac{2}{3} - \\frac{16}{33}",
+            "result": "\\frac{2}{11}",
+            "steps": [
+              "= \\frac{22}{33} - \\frac{16}{33}",
+              "= \\frac{6}{33}",
+              "= \\frac{2}{11}"
+            ]
+          },
+          {
+            "expression": "\\frac{4}{3} - \\frac{9}{8}",
+            "result": "-\\frac{5}{24}",
+            "steps": [
+              "= \\frac{32}{24} - \\frac{27}{24}",
+              "= -\\frac{5}{24}"
+            ]
+          }
+        ]
+      },
+      "student_marks": {
+        "checked_options": [],
+        "crossed": false,
+        "other_marks": ""
+      },
+      "teacher_feedback": {
+        "is_correct": true,
+        "score": "16分",
+        "symbols": [
+          "√"
+        ],
+        "comment": ""
+      },
+      "sub_questions": []
+    },
+    {
+      "id": "21",
+      "type": "解答题",
+      "stem": "妈妈给芳芳安排了\\frac{1}{12}天学钢琴，\\frac{1}{8}天学英语，\\frac{1}{6}天去少年宫。芳芳这一天还剩多少时间？",
+      "options": {},
+      "student_answer": {
+        "final": "\\frac{5}{8} (天)",
+        "steps": [
+          {
+            "expression": "1 - \\frac{1}{12} - \\frac{1}{8} - \\frac{1}{6}",
+            "steps": [
+              "= \\frac{12}{12} - \\frac{1}{12} - \\frac{1}{8} - \\frac{2}{12}",
+              "= \\frac{11}{12} - \\frac{1}{8} - \\frac{2}{12}",
+              "= \\frac{9}{12} - \\frac{1}{8}",
+              "= \\frac{3}{4} - \\frac{1}{8}",
+              "= \\frac{6}{8} - \\frac{1}{8}",
+              "= \\frac{5}{8} (天)"
+            ]
+          }
+        ]
+      },
+      "student_marks": {
+        "checked_options": [],
+        "crossed": false,
+        "other_marks": ""
+      },
+      "teacher_feedback": {
+        "is_correct": true,
+        "score": "10分",
+        "symbols": [
+          "√"
+        ],
+        "comment": ""
+      },
+      "sub_questions": []
+    },
+    {
+      "id": "22",
+      "type": "应用题",
+      "stem": "一篇手稿小明用0.3小时打完，小李用\\frac{1}{4}小时打完，小强用\\frac{1}{3}小时打完。谁的打字速度最快？",
+      "options": {},
+      "student_answer": {
+        "final": "小强打字最快",
+        "steps": [
+          {
+            "expression": "0.3 = \\frac{3}{10} = \\frac{18}{60} (小时)"
+          },
+          {
+            "expression": "\\frac{1}{4} = \\frac{15}{60} (小时)"
+          },
+          {
+            "expression": "\\frac{1}{3} = \\frac{20}{60} (小时)"
+          },
+          {
+            "expression": "∵ \\frac{20}{60} > \\frac{18}{60} > \\frac{15}{60} (小时)",
+            "comment": "∴ 小强 > 小明 > 小李"
+          }
+        ]
+      },
+      "student_marks": {
+        "checked_options": [],
+        "crossed": false,
+        "other_marks": ""
+      },
+      "teacher_feedback": {
+        "is_correct": true,
+        "score": "12分",
+        "symbols": [
+          "√"
+        ],
+        "comment": ""
+      },
+      "sub_questions": []
+    },
+    {
+      "id": "23",
+      "type": "填空题",
+      "stem": "在数轴上面的□里填分数，在数轴下面的□里填小数。",
+      "options": {},
+      "student_answer": {
+        "final": "53/100, 0.53",
+        "steps": []
+      },
+      "student_marks": {
+        "checked_options": [],
+        "crossed": false,
+        "other_marks": ""
+      },
+      "teacher_feedback": {
+        "is_correct": true,
+        "score": "12分",
+        "symbols": [
+          "√"
+        ],
+        "comment": ""
+      },
+      "sub_questions": []
+    },
+    {
+      "id": "24",
+      "type": "解答题",
+      "stem": "先画一画，再用算式表示结果。\\frac{2}{3}的\\frac{1}{4}是多少？",
+      "options": {},
+      "student_answer": {
+        "final": "\\frac{2}{3}的\\frac{1}{4}是\\frac{1}{6}",
+        "steps": [
+          {
+            "expression": "\\frac{2}{3} \\times \\frac{1}{4}",
+            "result": "\\frac{2}{12}",
+            "steps": [
+              "= \\frac{2}{12}",
+              "= \\frac{1}{6}"
+            ]
+          },
+          {
+            "comment": "画图：将\\frac{2}{3}的矩形分成4份，取1份，结果是\\frac{1}{6}"
+          }
+        ]
+      },
+      "student_marks": {
+        "checked_options": [],
+        "crossed": false,
+        "other_marks": ""
+      },
+      "teacher_feedback": {
+        "is_correct": true,
+        "score": "12分",
+        "symbols": [
+          "√"
+        ],
+        "comment": ""
+      },
+      "sub_questions": []
+    }
+  ]
+}

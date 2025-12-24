@@ -1,0 +1,242 @@
+{
+  "paper_title": "",
+  "subject": "数学",
+  "questions": [
+    {
+      "id": "19",
+      "type": "填空题",
+      "stem": "吴叔叔买了一套面积为120平方米的房子，其中，客厅面积占了总面积的\\frac{1}{4}，厨房面积占了总面积的\\frac{1}{8}。客厅面积有____平方米，厨房面积有____平方米。",
+      "options": {},
+      "student_answer": {
+        "final": "30, 15",
+        "steps": []
+      },
+      "student_marks": {
+        "checked_options": [],
+        "crossed": false,
+        "other_marks": "2分"
+      },
+      "teacher_feedback": {
+        "is_correct": true,
+        "score": "2分",
+        "symbols": [
+          "√"
+        ],
+        "comment": ""
+      },
+      "sub_questions": []
+    },
+    {
+      "id": "20",
+      "type": "计算题",
+      "stem": "怎样简便就怎样算。",
+      "options": {},
+      "student_answer": {
+        "final": "",
+        "steps": [
+          {
+            "step": "\\frac{17}{15} \\times 45 = \\frac{17}{15} \\times (15 \\times 3) = 17 \\times 3 = 51",
+            "marks": "√"
+          },
+          {
+            "step": "\\frac{6}{55} \\times \\frac{11}{5} = \\frac{6}{5} \\times \\frac{1}{5} = \\frac{6}{25}",
+            "marks": "√"
+          },
+          {
+            "step": "45 \\times \\frac{2}{3} = 15 \\times 2 = 30",
+            "marks": "√"
+          },
+          {
+            "step": "\\frac{3}{7} + \\frac{7}{3} = \\frac{9}{21} + \\frac{49}{21} = \\frac{58}{21}",
+            "marks": "√"
+          },
+          {
+            "step": "\\frac{55}{36} \\times \\frac{6}{11} = \\frac{5}{6}",
+            "marks": "√"
+          },
+          {
+            "step": "\\frac{13}{7} \\times 91 = 13 \\times 13 = 169",
+            "marks": "√"
+          },
+          {
+            "step": "2\\frac{3}{4} \\times \\frac{16}{33} = \\frac{4}{5}",
+            "marks": "√"
+          },
+          {
+            "step": "\\frac{4}{3} - \\frac{9}{8} = \\frac{32}{24} - \\frac{27}{24} = \\frac{5}{24}",
+            "marks": "√"
+          }
+        ]
+      },
+      "student_marks": {
+        "checked_options": [],
+        "crossed": false,
+        "other_marks": "16分"
+      },
+      "teacher_feedback": {
+        "is_correct": true,
+        "score": "16分",
+        "symbols": [
+          "√"
+        ],
+        "comment": ""
+      },
+      "sub_questions": []
+    },
+    {
+      "id": "21",
+      "type": "解答题",
+      "stem": "妈妈给芳芳安排了\\frac{1}{12}天学钢琴，\\frac{1}{8}天学英语，\\frac{1}{6}天去少年宫。芳芳这一天还剩多少时间？",
+      "options": {},
+      "student_answer": {
+        "final": "\\frac{5}{8}天",
+        "steps": [
+          {
+            "step": "1 - \\frac{1}{12} - \\frac{1}{8} - \\frac{1}{6}",
+            "marks": ""
+          },
+          {
+            "step": "= \\frac{12}{12} - \\frac{1}{12} - \\frac{1}{8} - \\frac{2}{12}",
+            "marks": ""
+          },
+          {
+            "step": "= \\frac{11}{12} - \\frac{3}{12} - \\frac{1}{8}",
+            "marks": ""
+          },
+          {
+            "step": "= \\frac{9}{12} - \\frac{1}{8}",
+            "marks": ""
+          },
+          {
+            "step": "= \\frac{3}{4} - \\frac{1}{8}",
+            "marks": ""
+          },
+          {
+            "step": "= \\frac{6}{8} - \\frac{1}{8}",
+            "marks": ""
+          },
+          {
+            "step": "= \\frac{5}{8} (天)",
+            "marks": "√"
+          }
+        ]
+      },
+      "student_marks": {
+        "checked_options": [],
+        "crossed": false,
+        "other_marks": "10分"
+      },
+      "teacher_feedback": {
+        "is_correct": true,
+        "score": "10分",
+        "symbols": [
+          "√"
+        ],
+        "comment": ""
+      },
+      "sub_questions": []
+    },
+    {
+      "id": "22",
+      "type": "解答题",
+      "stem": "一篇手稿小明用0.3小时打完，小李用\\frac{1}{4}小时打完，小强用\\frac{1}{3}小时打完。谁的打字速度最快？",
+      "options": {},
+      "student_answer": {
+        "final": "小强打字最快",
+        "steps": [
+          {
+            "step": "0.3 = \\frac{3}{10} = \\frac{18}{60} (小时)",
+            "marks": ""
+          },
+          {
+            "step": "\\frac{1}{4} = \\frac{15}{60} (小时)",
+            "marks": ""
+          },
+          {
+            "step": "\\frac{1}{3} = \\frac{20}{60} (小时)",
+            "marks": ""
+          },
+          {
+            "step": "∵ \\frac{20}{60} > \\frac{18}{60} > \\frac{15}{60} (小时) ∴ 小强 > 小明 > 小李",
+            "marks": ""
+          }
+        ]
+      },
+      "student_marks": {
+        "checked_options": [],
+        "crossed": false,
+        "other_marks": "12分"
+      },
+      "teacher_feedback": {
+        "is_correct": true,
+        "score": "12分",
+        "symbols": [
+          "√"
+        ],
+        "comment": ""
+      },
+      "sub_questions": []
+    },
+    {
+      "id": "23",
+      "type": "填空题",
+      "stem": "在数轴上面的□里填分数，在数轴下面的□里填小数。",
+      "options": {},
+      "student_answer": {
+        "final": "\\frac{53}{100}, 0.53",
+        "steps": []
+      },
+      "student_marks": {
+        "checked_options": [],
+        "crossed": false,
+        "other_marks": "12分"
+      },
+      "teacher_feedback": {
+        "is_correct": true,
+        "score": "12分",
+        "symbols": [
+          "√"
+        ],
+        "comment": ""
+      },
+      "sub_questions": []
+    },
+    {
+      "id": "24",
+      "type": "解答题",
+      "stem": "先画一画，再用算式表示结果。\\frac{2}{3}的\\frac{1}{4}是多少？",
+      "options": {},
+      "student_answer": {
+        "final": "\\frac{2}{3}的\\frac{1}{4}是\\frac{1}{6}",
+        "steps": [
+          {
+            "step": "\\frac{2}{3} \\times \\frac{1}{4}",
+            "marks": ""
+          },
+          {
+            "step": "= \\frac{2}{12}",
+            "marks": ""
+          },
+          {
+            "step": "= \\frac{1}{6}",
+            "marks": "√"
+          }
+        ]
+      },
+      "student_marks": {
+        "checked_options": [],
+        "crossed": false,
+        "other_marks": "12分"
+      },
+      "teacher_feedback": {
+        "is_correct": true,
+        "score": "12分",
+        "symbols": [
+          "√"
+        ],
+        "comment": ""
+      },
+      "sub_questions": []
+    }
+  ]
+}
