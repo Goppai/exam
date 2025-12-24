@@ -20,11 +20,14 @@ export default function QuestionCard({ question, subject }: Props) {
   const [explain, setExplain] = useState<string>('');
 
   const { Text } = Typography;
+  const normalizedSubject = subject?.toLowerCase();
+  const apiSubject =
+    normalizedSubject === 'english' || subject === '英语' ? 'english' : 'math';
 
   const onExplain = async () => {
     setLoading(true);
     try {
-      const res = await explainQuestion(subject, question);
+      const res = await explainQuestion(apiSubject, question);
       setExplain(res.explanation || '');
     } finally {
       setLoading(false);
@@ -35,7 +38,6 @@ export default function QuestionCard({ question, subject }: Props) {
   const isCorrect = feedback?.is_correct;
   const explainLabel = explain ? '重新讲解' : '讲解';
 
-  const normalizedSubject = subject?.toLowerCase();
   const subjectLabel =
     normalizedSubject === 'math' || subject === '数学'
       ? '数学'
@@ -51,6 +53,11 @@ export default function QuestionCard({ question, subject }: Props) {
     feedback?.score !== undefined && feedback?.score !== ''
       ? feedback.score
       : '';
+  const studentMarks = question.student_marks;
+  const checkedOptions =
+    studentMarks?.checked_options && studentMarks.checked_options.length > 0
+      ? studentMarks.checked_options
+      : [];
 
   const statusTag =
     isCorrect === true ? (
@@ -177,6 +184,7 @@ export default function QuestionCard({ question, subject }: Props) {
   return (
     <Card
       className="question-card"
+      id={`question-${question.id}`}
       title={
         <div className="question-card__title">
           <div className="question-index">{question.id}</div>
@@ -271,6 +279,21 @@ export default function QuestionCard({ question, subject }: Props) {
         </div>
       )}
 
+      {studentMarks && (
+        <div className="question-section">
+          <div className="section-label">作答标记</div>
+          <Space size={6} wrap>
+            {checkedOptions.length > 0 && (
+              <Tag color="green">选中：{checkedOptions.join(', ')}</Tag>
+            )}
+            {studentMarks.crossed && <Tag color="red">已划掉</Tag>}
+            {studentMarks.other_marks && (
+              <Tag color="gold">{studentMarks.other_marks}</Tag>
+            )}
+          </Space>
+        </div>
+      )}
+
       {loading && (
         <div className="explain-block">
           <Space>
@@ -283,7 +306,13 @@ export default function QuestionCard({ question, subject }: Props) {
       {explain && !loading && (
         <div className="explain-block">
           <div className="explain-title">讲解</div>
-          <div>{explain}</div>
+          <div>
+            {explain.split('\n').map((line, idx) => (
+              <div key={`${idx}-${line}`} className="explain-line">
+                {line.trim() ? <MathRenderer text={line} /> : <span>&nbsp;</span>}
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </Card>

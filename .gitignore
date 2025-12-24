@@ -8,9 +8,11 @@ __pycache__/
 .venv/
 backend/.venv/
 
-# Backend caches
-backend/cache/
-backend/cache_explain/
+# Backend caches (keep folders, ignore contents)
+backend/cache/*
+backend/cache_explain/*
+!backend/cache/.gitkeep
+!backend/cache_explain/.gitkeep
 
 # Node / Vite
 node_modules/
