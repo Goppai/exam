@@ -7,27 +7,28 @@ def get_client():
     return ZhipuAiClient(api_key=api_key)
 
 
-def call_model(client, prompt, image_url=None, retry=2):
+def call_model(client, prompt, image_url=None, retry=2, use_thinking: bool = True):
     if not prompt or not prompt.strip():
         raise ValueError("call_model received empty prompt!")
 
-    # ✅ 永远保证 text 在第一个
+    # 永远保证 text 在第一个
     content = [{"type": "text", "text": prompt}]
-
-    print("CALL content:", content)
-
-
     if image_url:
         content.append({"type": "image_url", "image_url": {"url": image_url}})
 
     last_err = None
     for _ in range(retry + 1):
         try:
-            resp = client.chat.completions.create(
+            kwargs = dict(
                 model="glm-4.6v",
                 messages=[{"role": "user", "content": content}],
-                timeout=120
+                timeout=120,
             )
+            # ✅ 开启 thinking
+            if use_thinking:
+                kwargs["thinking"] = {"type": "enabled"}
+
+            resp = client.chat.completions.create(**kwargs)
             return resp.choices[0].message.content.strip()
         except Exception as e:
             last_err = e

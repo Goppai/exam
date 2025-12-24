@@ -1,1 +1,31 @@
-backend/.venv
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Virtual env
+.venv/
+backend/.venv/
+
+# Backend caches
+backend/cache/
+backend/cache_explain/
+
+# Node / Vite
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Env files
+.env
+.env.*
+
+# Logs
+*.log
+
+# OS/IDE
+.DS_Store
+.idea/
+.vscode/

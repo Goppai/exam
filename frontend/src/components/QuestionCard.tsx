@@ -1,4 +1,10 @@
-import { Card, Button, Spin, Tag } from 'antd';
+import { Card, Button, Spin, Tag, Typography, Space } from 'antd';
+import {
+  BulbOutlined,
+  CheckCircleFilled,
+  CloseCircleFilled,
+  ClockCircleOutlined,
+} from '@ant-design/icons';
 import { useState, type Key } from 'react';
 import type { Question } from '../types/exam';
 import { explainQuestion } from '../services/api';
@@ -13,6 +19,8 @@ export default function QuestionCard({ question, subject }: Props) {
   const [loading, setLoading] = useState(false);
   const [explain, setExplain] = useState<string>('');
 
+  const { Text } = Typography;
+
   const onExplain = async () => {
     setLoading(true);
     try {
@@ -25,97 +33,257 @@ export default function QuestionCard({ question, subject }: Props) {
 
   const feedback = question.teacher_feedback;
   const isCorrect = feedback?.is_correct;
+  const explainLabel = explain ? '重新讲解' : '讲解';
+
+  const normalizedSubject = subject?.toLowerCase();
+  const subjectLabel =
+    normalizedSubject === 'math' || subject === '数学'
+      ? '数学'
+      : normalizedSubject === 'english' || subject === '英语'
+        ? '英语'
+        : subject || '数学';
+
+  const optionEntries = question.options
+    ? Object.entries(question.options)
+    : [];
+
+  const scoreText =
+    feedback?.score !== undefined && feedback?.score !== ''
+      ? feedback.score
+      : '';
+
+  const statusTag =
+    isCorrect === true ? (
+      <Tag
+        color="green"
+        icon={<CheckCircleFilled />}
+        className="status-tag"
+      >
+        正确
+      </Tag>
+    ) : isCorrect === false ? (
+      <Tag color="red" icon={<CloseCircleFilled />} className="status-tag">
+        错误
+      </Tag>
+    ) : (
+      <Tag icon={<ClockCircleOutlined />} className="status-tag">
+        待批改
+      </Tag>
+    );
+
+  const getStepText = (value: unknown): string | null => {
+    if (typeof value === 'string' || typeof value === 'number') {
+      return String(value);
+    }
+    if (value && typeof value === 'object') {
+      const payload = value as {
+        expression?: string;
+        step?: string;
+        comment?: string;
+      };
+      if (payload.expression) return payload.expression;
+      if (payload.step) return payload.step;
+      if (payload.comment) return payload.comment;
+    }
+    return null;
+  };
+
+  const renderStep = (step: unknown, index: Key | null | undefined) => {
+    if (typeof step === 'string' || typeof step === 'number') {
+      return (
+        <li key={index} className="step-card">
+          <MathRenderer text={String(step)} />
+        </li>
+      );
+    }
+
+    if (!step || typeof step !== 'object') return null;
+
+    const payload = step as {
+      expression?: string;
+      result?: string;
+      steps?: unknown[];
+      comment?: string;
+      step?: string;
+      marks?: string;
+    };
+    const nestedSteps = Array.isArray(payload.steps) ? payload.steps : [];
+    const stepText = getStepText(payload.step);
+    const markText =
+      typeof payload.marks === 'string' && payload.marks.trim()
+        ? payload.marks.trim()
+        : '';
+
+    if (stepText) {
+      const markColor = markText.includes('√')
+        ? 'green'
+        : markText.includes('×')
+          ? 'red'
+          : 'default';
+      return (
+        <li key={index} className="step-card">
+          <div className="step-expression">
+            <MathRenderer text={stepText} />
+          </div>
+          {markText && (
+            <div className="step-meta">
+              <Tag color={markColor}>{markText}</Tag>
+            </div>
+          )}
+        </li>
+      );
+    }
+
+    return (
+      <li key={index} className="step-card">
+        {payload.expression && (
+          <div className="step-expression">
+            <MathRenderer text={payload.expression} />
+          </div>
+        )}
+        {payload.result && (
+          <div className="step-meta">
+            <Tag color="blue" bordered={false}>
+              结果
+            </Tag>
+            <MathRenderer text={payload.result} />
+          </div>
+        )}
+        {nestedSteps.length > 0 && (
+          <ul className="step-sublist">
+            {nestedSteps.map((item, nestedIndex) => (
+              <li key={`${index}-${nestedIndex}`}>
+                <MathRenderer text={getStepText(item) ?? String(item)} />
+              </li>
+            ))}
+          </ul>
+        )}
+        {payload.comment && <div className="step-comment">{payload.comment}</div>}
+      </li>
+    );
+  };
+
+  const studentAnswer =
+    question.student_answer &&
+    typeof question.student_answer === 'object' &&
+    question.student_answer !== null
+      ? (question.student_answer as {
+          final?: string;
+          steps?: unknown[];
+        })
+      : null;
+  const answerSteps = studentAnswer?.steps ?? [];
 
   return (
     <Card
-      title={`第 ${question.id} 题（${question.type || '未知'}）`}
-      style={{ marginBottom: 16 }}
+      className="question-card"
+      title={
+        <div className="question-card__title">
+          <div className="question-index">{question.id}</div>
+          <div>
+            <div className="question-title">第 {question.id} 题</div>
+            <div className="question-subtitle">
+              <Tag color="geekblue" bordered={false}>
+                {subjectLabel}
+              </Tag>
+              <Tag color="default" bordered={false}>
+                {question.type || '综合题'}
+              </Tag>
+            </div>
+          </div>
+        </div>
+      }
       extra={
-        <Button size="small" onClick={onExplain} loading={loading}>
-          讲解
-        </Button>
+        <Space size={8} align="center">
+          {statusTag}
+          <Button
+            type="primary"
+            icon={<BulbOutlined />}
+            onClick={onExplain}
+            loading={loading}
+            className="explain-button"
+          >
+            {explainLabel}
+          </Button>
+        </Space>
       }
     >
-      {/* 题干 */}
-      <div style={{ marginBottom: 8 }}>
-        <MathRenderer text={question.stem} />
+      <div className="question-section">
+        <div className="section-label">题干</div>
+        <div className="section-body">
+          <MathRenderer text={question.stem} />
+        </div>
       </div>
 
-      {/* 选项 */}
-      {question.options && Object.keys(question.options).length > 0 && (
-        <ul style={{ paddingLeft: 20 }}>
-          {Object.entries(question.options).map(([k, v]) => (
-            <li key={k} style={{ marginBottom: 4 }}>
-              <b>{k}.</b> <MathRenderer text={v} />
-            </li>
-          ))}
-        </ul>
+      {optionEntries.length > 0 && (
+        <div className="question-section">
+          <div className="section-label">选项</div>
+          <ul className="option-list">
+            {optionEntries.map(([k, v]) => (
+              <li key={k}>
+                <strong>{k}.</strong> <MathRenderer text={v} />
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
 
-      {/* 学生答案 */}
       {question.student_answer && (
-        <div style={{ marginTop: 8 }}>
-          <b>学生答案：</b>
+        <div className="question-section">
+          <div className="section-label">学生答案</div>
           {typeof question.student_answer === 'string' ? (
-            <span> {question.student_answer}</span>
+            <div className="section-body">
+              <MathRenderer text={question.student_answer} />
+            </div>
           ) : (
-            <>
-              {question.student_answer.final && (
-                <span>
-                  {' '}
-                  <MathRenderer text={question.student_answer.final} />
-                </span>
+            <div className="answer-block">
+              {studentAnswer?.final && (
+                <div>
+                  <Text type="secondary">最终答案</Text>
+                  <div className="section-body">
+                    <MathRenderer text={studentAnswer.final} />
+                  </div>
+                </div>
               )}
-              {question.student_answer.steps &&
-                question.student_answer.steps.length > 0 && (
-                  <ul style={{ marginTop: 4 }}>
-                    {question.student_answer.steps.map(
-                      (s: string, i: Key | null | undefined) => (
-                        <li key={i}>
-                          <MathRenderer text={s} />
-                        </li>
-                      )
-                    )}
+              {Array.isArray(answerSteps) && answerSteps.length > 0 && (
+                <div>
+                  <Text type="secondary">解题过程</Text>
+                  <ul className="answer-steps">
+                    {answerSteps.map(renderStep)}
                   </ul>
-                )}
-            </>
+                </div>
+              )}
+            </div>
           )}
         </div>
       )}
 
-      {/* 批改信息 */}
       {feedback && (
-        <div style={{ marginTop: 8 }}>
-          <b>批改：</b>
-          {isCorrect === true && <Tag color="green">√ 正确</Tag>}
-          {isCorrect === false && <Tag color="red">× 错误</Tag>}
-          {feedback.score && <Tag color="blue">{feedback.score} 分</Tag>}
-          {feedback.comment && (
-            <span style={{ marginLeft: 8 }}>{feedback.comment}</span>
-          )}
+        <div className="question-section">
+          <div className="section-label">批改</div>
+          <Space size={6} wrap>
+            {statusTag}
+            {scoreText && <Tag color="blue">{scoreText}</Tag>}
+            {feedback.comment && (
+              <Text type="secondary">{feedback.comment}</Text>
+            )}
+          </Space>
         </div>
       )}
 
-      {/* 讲解 */}
       {loading && (
-        <div style={{ marginTop: 12 }}>
-          <Spin />
+        <div className="explain-block">
+          <Space>
+            <Spin size="small" />
+            <span>正在生成讲解...</span>
+          </Space>
         </div>
       )}
 
       {explain && !loading && (
-        <div
-          style={{
-            marginTop: 12,
-            padding: 12,
-            background: '#fafafa',
-            border: '1px solid #eee',
-            borderRadius: 4,
-            whiteSpace: 'pre-wrap',
-          }}
-        >
-          <b>讲解：</b>
-          <div style={{ marginTop: 6 }}>{explain}</div>
+        <div className="explain-block">
+          <div className="explain-title">讲解</div>
+          <div>{explain}</div>
         </div>
       )}
     </Card>
