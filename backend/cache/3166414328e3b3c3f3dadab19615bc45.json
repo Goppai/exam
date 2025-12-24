@@ -1,0 +1,368 @@
+{
+  "paper_title": "第二单元 分数乘法 考点诊断查漏卷",
+  "subject": "数学",
+  "questions": [
+    {
+      "id": "1-1",
+      "type": "计算题",
+      "stem": "\\frac{1}{2} \\times 2 =",
+      "student_answer": {
+        "final": "1",
+        "steps": []
+      },
+      "student_marks": {
+        "checked_options": [],
+        "crossed": false,
+        "other_marks": ""
+      },
+      "teacher_feedback": {
+        "is_correct": true,
+        "score": "1",
+        "symbols": [
+          "√"
+        ],
+        "comment": ""
+      },
+      "sub_questions": []
+    },
+    {
+      "id": "1-2",
+      "type": "计算题",
+      "stem": "\\frac{3}{4} \\times 12 =",
+      "student_answer": {
+        "final": "9",
+        "steps": []
+      },
+      "student_marks": {
+        "checked_options": [],
+        "crossed": false,
+        "other_marks": ""
+      },
+      "teacher_feedback": {
+        "is_correct": true,
+        "score": "1",
+        "symbols": [
+          "√"
+        ],
+        "comment": ""
+      },
+      "sub_questions": []
+    },
+    {
+      "id": "1-3",
+      "type": "计算题",
+      "stem": "\\frac{2}{5} \\times 5 =",
+      "student_answer": {
+        "final": "2",
+        "steps": []
+      },
+      "student_marks": {
+        "checked_options": [],
+        "crossed": false,
+        "other_marks": ""
+      },
+      "teacher_feedback": {
+        "is_correct": true,
+        "score": "1",
+        "symbols": [
+          "√"
+        ],
+        "comment": ""
+      },
+      "sub_questions": []
+    },
+    {
+      "id": "1-4",
+      "type": "计算题",
+      "stem": "\\frac{7}{10} \\times 20 =",
+      "student_answer": {
+        "final": "14",
+        "steps": []
+      },
+      "student_marks": {
+        "checked_options": [],
+        "crossed": false,
+        "other_marks": ""
+      },
+      "teacher_feedback": {
+        "is_correct": true,
+        "score": "1",
+        "symbols": [
+          "√"
+        ],
+        "comment": ""
+      },
+      "sub_questions": []
+    },
+    {
+      "id": "1-5",
+      "type": "计算题",
+      "stem": "6 \\times \\frac{1}{7} =",
+      "student_answer": {
+        "final": "\\frac{6}{7}",
+        "steps": []
+      },
+      "student_marks": {
+        "checked_options": [],
+        "crossed": false,
+        "other_marks": ""
+      },
+      "teacher_feedback": {
+        "is_correct": true,
+        "score": "1",
+        "symbols": [
+          "√"
+        ],
+        "comment": ""
+      },
+      "sub_questions": []
+    },
+    {
+      "id": "1-6",
+      "type": "计算题",
+      "stem": "8 \\times \\frac{3}{4} =",
+      "student_answer": {
+        "final": "6",
+        "steps": []
+      },
+      "student_marks": {
+        "checked_options": [],
+        "crossed": false,
+        "other_marks": ""
+      },
+      "teacher_feedback": {
+        "is_correct": true,
+        "score": "1",
+        "symbols": [
+          "√"
+        ],
+        "comment": ""
+      },
+      "sub_questions": []
+    },
+    {
+      "id": "1-7",
+      "type": "计算题",
+      "stem": "9 \\times \\frac{2}{3} =",
+      "student_answer": {
+        "final": "6",
+        "steps": []
+      },
+      "student_marks": {
+        "checked_options": [],
+        "crossed": false,
+        "other_marks": ""
+      },
+      "teacher_feedback": {
+        "is_correct": true,
+        "score": "1",
+        "symbols": [
+          "√"
+        ],
+        "comment": ""
+      },
+      "sub_questions": []
+    },
+    {
+      "id": "1-8",
+      "type": "计算题",
+      "stem": "24 \\times \\frac{7}{8} =",
+      "student_answer": {
+        "final": "21",
+        "steps": []
+      },
+      "student_marks": {
+        "checked_options": [],
+        "crossed": false,
+        "other_marks": ""
+      },
+      "teacher_feedback": {
+        "is_correct": true,
+        "score": "1",
+        "symbols": [
+          "√"
+        ],
+        "comment": ""
+      },
+      "sub_questions": []
+    },
+    {
+      "id": "2-1",
+      "type": "填空题",
+      "stem": "1. 1米的\\frac{4}{7}和4米的\\frac{1}{7}相比，( )。(填序号)\n①1米的\\frac{4}{7}长 ②4米的\\frac{1}{7}长 ③一样长",
+      "options": {
+        "A": "①1米的\\frac{4}{7}长",
+        "B": "②4米的\\frac{1}{7}长",
+        "C": "③一样长"
+      },
+      "student_answer": {
+        "final": "③",
+        "steps": []
+      },
+      "student_marks": {
+        "checked_options": [
+          "③"
+        ],
+        "crossed": false,
+        "other_marks": ""
+      },
+      "teacher_feedback": {
+        "is_correct": true,
+        "score": "1",
+        "symbols": [
+          "√"
+        ],
+        "comment": ""
+      },
+      "sub_questions": []
+    },
+    {
+      "id": "2-2",
+      "type": "填空题",
+      "stem": "2. \\frac{5}{6}时=( )分  \\frac{5}{4}平方千米=( )公顷  \\frac{8}{5}立方米=( )立方米",
+      "options": {},
+      "student_answer": {
+        "final": "50 1000 1.6",
+        "steps": []
+      },
+      "student_marks": {
+        "checked_options": [],
+        "crossed": false,
+        "other_marks": ""
+      },
+      "teacher_feedback": {
+        "is_correct": null,
+        "score": "",
+        "symbols": [
+          "√",
+          "×",
+          "√"
+        ],
+        "comment": ""
+      },
+      "sub_questions": []
+    },
+    {
+      "id": "2-3",
+      "type": "填空题",
+      "stem": "3. 看右图把数量关系补充完整。\n( )游泳队的人数\\frac{5}{7}=(体操队的人数)",
+      "options": {},
+      "student_answer": {
+        "final": "游泳队的人数",
+        "steps": []
+      },
+      "student_marks": {
+        "checked_options": [],
+        "crossed": false,
+        "other_marks": ""
+      },
+      "teacher_feedback": {
+        "is_correct": true,
+        "score": "1",
+        "symbols": [
+          "√"
+        ],
+        "comment": ""
+      },
+      "sub_questions": []
+    },
+    {
+      "id": "2-4",
+      "type": "填空题",
+      "stem": "4. 明明收集了45张画片，亮亮收集的比明明少\\frac{4}{9}，亮亮收集的画片比明明少( )张，算式是( )。",
+      "options": {},
+      "student_answer": {
+        "final": "5",
+        "steps": []
+      },
+      "student_marks": {
+        "checked_options": [],
+        "crossed": false,
+        "other_marks": ""
+      },
+      "teacher_feedback": {
+        "is_correct": true,
+        "score": "1",
+        "symbols": [
+          "√"
+        ],
+        "comment": ""
+      },
+      "sub_questions": []
+    },
+    {
+      "id": "3-1",
+      "type": "操作题",
+      "stem": "1. 用涂色的方式表示出\\frac{2}{9} \\times 2的结果。(2分)",
+      "options": {},
+      "student_answer": {
+        "final": "",
+        "steps": []
+      },
+      "student_marks": {
+        "checked_options": [],
+        "crossed": false,
+        "other_marks": ""
+      },
+      "teacher_feedback": {
+        "is_correct": true,
+        "score": "2",
+        "symbols": [
+          "√"
+        ],
+        "comment": ""
+      },
+      "sub_questions": []
+    },
+    {
+      "id": "3-2",
+      "type": "操作题",
+      "stem": "2. 用涂色的方式表示出3千克的\\frac{1}{4}。(2分)",
+      "options": {},
+      "student_answer": {
+        "final": "",
+        "steps": []
+      },
+      "student_marks": {
+        "checked_options": [],
+        "crossed": false,
+        "other_marks": ""
+      },
+      "teacher_feedback": {
+        "is_correct": true,
+        "score": "2",
+        "symbols": [
+          "√"
+        ],
+        "comment": ""
+      },
+      "sub_questions": []
+    },
+    {
+      "id": "4-1",
+      "type": "应用题",
+      "stem": "四、[乐山市期末]垃圾分类，从我做起。垃圾通过分类清运和回收可以重新变成资源。如果回收1吨厨余垃圾，可以生产\\frac{3}{10}吨有机肥料。一个垃圾处理厂某天收到30吨厨余垃圾，可以生产多少吨有机肥料？(5分)",
+      "options": {},
+      "student_answer": {
+        "final": "9(吨)",
+        "steps": [
+          "30 \\times \\frac{3}{10} = 9(吨)"
+        ]
+      },
+      "student_marks": {
+        "checked_options": [],
+        "crossed": false,
+        "other_marks": ""
+      },
+      "teacher_feedback": {
+        "is_correct": true,
+        "score": "5",
+        "symbols": [
+          "√"
+        ],
+        "comment": ""
+      },
+      "sub_questions": []
+    }
+  ]
+}
