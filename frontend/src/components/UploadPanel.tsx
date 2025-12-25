@@ -1,7 +1,7 @@
-import { memo, type RefObject } from 'react';
-import { Upload, Button, Select, Typography, Card, Space, Tag, Divider } from 'antd';
+import { memo, useState, type RefObject } from 'react';
+import { Upload, Button, Select, Typography, Card, Space, Tag, Divider, Image } from 'antd';
 import type { UploadProps } from 'antd';
-import { UploadOutlined } from '@ant-design/icons';
+import { UploadOutlined, EyeOutlined } from '@ant-design/icons';
 
 interface SampleImage {
   name: string;
@@ -35,6 +35,14 @@ function UploadPanel({
   onSampleSelect,
   uploadActionsRef,
 }: Props) {
+  const [previewOpen, setPreviewOpen] = useState(false);
+  const [previewSrc, setPreviewSrc] = useState('');
+
+  const handlePreview = (src: string) => {
+    setPreviewSrc(src);
+    setPreviewOpen(true);
+  };
+
   return (
     <Card className="upload-card" id="upload-panel">
       <Space direction="vertical" size={16} style={{ width: '100%' }}>
@@ -77,19 +85,45 @@ function UploadPanel({
         <div className="sample-title">示例试卷（点击快速选择）</div>
         <div className="sample-grid">
           {sampleImages.map(sample => (
-            <button
+            <div
               key={sample.name}
-              type="button"
+              role="button"
+              tabIndex={0}
               className={`sample-item${
                 selectedSampleName === sample.name ? ' sample-item--active' : ''
               }`}
               onClick={() => onSampleSelect(sample.name, sample.src)}
+              onKeyDown={event => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                  event.preventDefault();
+                  onSampleSelect(sample.name, sample.src);
+                }
+              }}
             >
               <img src={sample.src} alt={sample.name} loading="lazy" />
               <span>{sample.name}</span>
-            </button>
+              <button
+                type="button"
+                className="sample-preview-trigger"
+                aria-label="预览示例图片"
+                onClick={event => {
+                  event.stopPropagation();
+                  handlePreview(sample.src);
+                }}
+              >
+                <EyeOutlined />
+              </button>
+            </div>
           ))}
         </div>
+        <Image
+          style={{ display: 'none' }}
+          src={previewSrc}
+          preview={{
+            visible: previewOpen,
+            onVisibleChange: visible => setPreviewOpen(visible),
+          }}
+        />
       </Space>
     </Card>
   );

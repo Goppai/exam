@@ -1,4 +1,4 @@
-import os, json, time, hashlib
+import os, json, time, hashlib, asyncio
 from app.utils.image import compress_image
 from app.services.zhipu_client import get_client, call_model, load_prompt
 
@@ -8,6 +8,7 @@ PROMPT_ENGLISH = load_prompt(os.path.join(BASE_DIR, "prompts", "prompt_english.t
 
 CACHE_DIR = os.path.join(BASE_DIR, "..", "cache")
 os.makedirs(CACHE_DIR, exist_ok=True)
+CACHE_DELAY_SECONDS = float(os.getenv("CACHE_DELAY_SECONDS", "12"))
 
 
 def md5(data: bytes) -> str:
@@ -25,7 +26,10 @@ async def extract_exam(file, subject: str, debug: bool = False):
     if os.path.exists(cache_path):
         with open(cache_path, "r", encoding="utf-8") as f:
             cached = json.load(f)
-        return {"from_cache": True, "cost": 0, "result": cached}
+        if CACHE_DELAY_SECONDS > 0:
+            await asyncio.sleep(CACHE_DELAY_SECONDS)
+        cost = round(time.time() - t0, 2)
+        return {"from_cache": True, "cost": cost, "result": cached}
 
     image_base64 = compress_image(content)
     image_url = f"data:image/jpeg;base64,{image_base64}"

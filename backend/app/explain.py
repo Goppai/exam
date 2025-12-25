@@ -7,6 +7,7 @@ PROMPT_EXPLAIN_ENG = load_prompt(os.path.join(BASE_DIR, "prompts", "explain_engl
 
 CACHE_DIR = os.path.join(BASE_DIR, "..", "cache_explain")
 os.makedirs(CACHE_DIR, exist_ok=True)
+CACHE_DELAY_SECONDS = float(os.getenv("CACHE_DELAY_SECONDS", "12"))
 
 
 def md5(s: str) -> str:
@@ -37,9 +38,12 @@ def explain_question(payload: dict):
     if os.path.exists(cache_path):
         with open(cache_path, "r", encoding="utf-8") as f:
             cached = json.load(f)
+        if CACHE_DELAY_SECONDS > 0:
+            time.sleep(CACHE_DELAY_SECONDS)
+        cost = round(time.time() - t0, 2)
         return {
             "from_cache": True,
-            "cost": 0,
+            "cost": cost,
             "explanation": cached.get("explanation", "")
         }
 
